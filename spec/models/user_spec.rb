@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'john', photo: 'link to photo', bio:'dev', posts_count: 0) }
+  subject { User.new(name: 'john', photo: 'link to photo', bio: 'dev', posts_count: 0) }
   before { subject.save }
 
   it 'name should be present' do
@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'returns recent posts' do
-    post = Post.create(author: subject, title: 'test', text: 'test', comments_count: 0, likes_count: 0)
+    Post.create(author: subject, title: 'test', text: 'test', comments_count: 0, likes_count: 0)
     posts = subject.recent_posts
     expect(posts.length).to eq 1
   end

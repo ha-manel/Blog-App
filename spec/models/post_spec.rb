@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.create(name: 'john', photo: 'link to photo', bio:'dev', posts_count: 0)
+  user = User.create(name: 'john', photo: 'link to photo', bio: 'dev', posts_count: 0)
 
-  subject { post = Post.new(author: user, title: 'web dev best practices', text: 'this is where the post text goes', comments_count: 0, likes_count: 0) }
+  subject do
+    Post.new(author: user, title: 'web dev best practices', text: 'this is where the post text goes',
+             comments_count: 0, likes_count: 0)
+  end
 
   before { subject.save }
 

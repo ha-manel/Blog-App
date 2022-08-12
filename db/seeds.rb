@@ -9,10 +9,10 @@
 user1 = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 user2 = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
 
-post1 = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
-post2 = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
-post3 = Post.create(author: second_user, title: 'Hello', text: 'This is my first post')
-post4 = Post.create(author: second_user, title: 'Hello', text: 'This is my second post')
+post1 = Post.create(author: user1, title: 'Hello', text: 'This is my first post')
+post2 = Post.create(author: user1, title: 'Hello', text: 'This is my second post')
+post3 = Post.create(author: user2, title: 'Hello', text: 'This is my first post')
+post4 = Post.create(author: user2, title: 'Hello', text: 'This is my second post')
 
 comment1 = Comment.create(post: Post.first,author: User.first, text: 'Hi Lilly!' )
 comment2 = Comment.create(post: Post.first,author: User.second, text: 'Hi Tom!' )

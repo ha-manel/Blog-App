@@ -1,0 +1,17 @@
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.post-title {
+  text-decoration: none;
+  color: #000;
+}
+
+.comments_cnt {
+  width: 40%;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-top: -18px;
+}

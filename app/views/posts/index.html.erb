@@ -1,1 +1,19 @@
-<h1>Here is the list of posts:</h1>
+<div>
+  <%= render 'partials/user'%>
+
+  <% @posts.each do |post| %>
+    <div class='post-card'>
+      <h3><%=link_to post.title, user_post_path(@user.id, post), :class => 'post-title'%></h3>
+      <p><%= post.text %></p>
+      <div class='likes-comments'>
+        <p>Comments: <%= post.comments_count.nil? ? 0 : post.comments_count %></p>
+        <p>Likes: <%= post.likes_count.nil? ? 0 : post.likes_count %></p>
+      </div>
+    </div>
+    <div class='comments_cnt'>
+      <% post.recent_comments.each do |comment| %>
+        <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

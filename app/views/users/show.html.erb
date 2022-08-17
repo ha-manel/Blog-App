@@ -1,1 +1,24 @@
-<h1>Here is the user you are looking for:</h1>
+<div>
+  <%= render 'partials/user'%>
+
+  <div class='user-bio'>
+    <h2>Bio</h2>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div>
+    <% @user.recent_posts.each do |post| %>
+    <div class='post-card'>
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+      <div class='likes-comments'>
+        <p>Comments: <%= post.comments_count.nil? ? 0 : post.comments_count %></p>
+        <p>Likes: <%= post.likes_count.nil? ? 0 : post.likes_count %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <% unless @user.recent_posts.empty? %>
+    <button><%=link_to 'See all posts', user_posts_path(@user), :class => 'see-all-btn'%></button>
+  <% end %>
+</div>

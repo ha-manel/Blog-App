@@ -1,0 +1,5 @@
+<div class='user-card'> 
+  <%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %>
+  <h2><%= @user.name %></h2>
+  <p>Number of posts: <%= @user.posts_count.nil? ? 0 : @user.posts_count %></p>
+</div>

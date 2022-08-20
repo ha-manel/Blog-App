@@ -15,6 +15,8 @@ class CommentsController < ApplicationController
     redirect_to user_post_url(author, post)
   end
 
+  private
+
   def comment_params
     params.require(:comment).permit(:text)
   end

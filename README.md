@@ -24,6 +24,14 @@ run:
 bundle install
 ```
 
+### Setup database
+run:
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
 ### Run the app
 run:
 ```

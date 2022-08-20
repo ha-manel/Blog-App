@@ -18,6 +18,12 @@ To setup the project locally: clone the repository using:
 git clone git@github.com:ha-manel/Blog-App.git
 ```
 
+### Run the app
+run 
+```
+rails s
+```
+
 ## Authors
 
 👤 **Manel Hammouche**

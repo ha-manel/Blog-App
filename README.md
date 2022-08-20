@@ -18,8 +18,14 @@ To setup the project locally: clone the repository using:
 git clone git@github.com:ha-manel/Blog-App.git
 ```
 
+### Install dependencies
+run:
+```
+bundle install
+```
+
 ### Run the app
-run 
+run:
 ```
 rails s
 ```

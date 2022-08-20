@@ -1,0 +1,8 @@
+<div>
+  <h3>Add a comment:</h3>
+  <%= form_with model: @comment, url: user_post_comments_url, method: :post do |form| %>
+    <%= form.label :text, 'Comment' %>
+    <%= form.text_area :text %>
+    <%= form.submit 'Post comment' %>
+  <% end %>
+</div>

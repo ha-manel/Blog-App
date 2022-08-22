@@ -1,39 +1,28 @@
 require 'rails_helper'
 
-RSpec.describe PostsController, type: :request do
+RSpec.describe PostsController, type: :controller do
+  before(:each) do
+    @user = User.create(
+      name: 'Tom',
+      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+      bio: 'Teacher from Mexico.'
+    )
+    @post = Post.create(author: @user, title: 'title', text: 'text')
+  end
+
   describe 'GET index' do
-    before :each do
-      get '/users/index/posts'
-    end
-
     it 'renders index' do
-      expect(response).to render_template('posts/index')
-    end
-
-    it 'returns code 200' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'response body has the right placeholder' do
-      expect(response.body).to include('Here is the list of posts:')
+      get :index, params: { user_id: @user.id }
+      expect(response.status).to eq(200)
+      expect(response).to render_template('index')
     end
   end
 
   describe 'GET show' do
-    before :each do
-      get '/users/index/posts/index'
-    end
-
     it 'renders show' do
-      expect(response).to render_template('posts/show')
-    end
-
-    it 'returns code 200' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'response body has the right placeholder' do
-      expect(response.body).to include('Here is the list of posts for a given user:')
+      get :show, params: { id: @post.id, user_id: @user.id }
+      expect(response.status).to eq(200)
+      expect(response).to render_template('show')
     end
   end
 end

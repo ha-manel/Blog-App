@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.login_header {
+  margin: 10px;
+}
+
+.field {
+  margin: 10px;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+}
+
+.submit {
+  margin: 10px;
+}
+
+.links-cnt {
+  margin: 10px;
+}

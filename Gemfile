@@ -44,6 +44,10 @@ gem 'tzinfo-data'
 
 gem 'ffi'
 
+gem 'letter_opener'
+
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 

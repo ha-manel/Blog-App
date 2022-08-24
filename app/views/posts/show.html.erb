@@ -9,11 +9,17 @@
   <p><%= @post.text %></p>
 </div>
 <div class="buttons">
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete %>
+  <% end %>
   <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post) %>
   <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
 </div>
 <div class='comments_cnt'>
   <% @post.comments.each do |comment| %>
     <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+    <% if can? :destroy, comment %>
+      <%= button_to 'Delete comment', user_post_comment_path(comment.author, @post, comment ), method: :delete %>
+    <% end %>
   <% end %>
 </div>

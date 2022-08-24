@@ -1,9 +1,9 @@
 <div>
   <%= render 'partials/user'%>
 
-  <div>
+  <% if @user == current_user %>
     <%= link_to 'Add a new post', new_user_post_path %>
-  </div>
+  <% end %>
   <% @posts.each do |post| %>
     <div class='post-card'>
       <h3><%=link_to post.title, user_post_path(@user.id, post), :class => 'post-title'%></h3>

@@ -1,4 +1,5 @@
 <div>
+  <%= button_to "logout", destroy_user_session_path, method: :delete  %>
   <% @users.each do |user| %>
     <div class='user-card'>
       <img src=<%= user.photo %> alt="profile picture" class="user-photo">

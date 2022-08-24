@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
@@ -12,6 +14,18 @@ class CommentsController < ApplicationController
 
     render :new unless @comment.save
 
+    redirect_to user_post_url(author, post)
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    author = @comment.post.author
+    post = @comment.post
+    if @comment.destroy
+      flash[:notice] = 'Comment deleted!'
+    else
+      flash[:alert] = 'Error! Please try again later.'
+    end
     redirect_to user_post_url(author, post)
   end
 

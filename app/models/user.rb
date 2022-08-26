@@ -31,4 +31,3 @@ class User < ApplicationRecord
     update_column(:authentication_token, ApiHelper::JsonWebToken.encode(email))
   end
 end
-

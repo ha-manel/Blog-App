@@ -46,6 +46,12 @@ rails s
 - Twitter: [@hamanel](https://twitter.com/ha_manel_)
 - LinkedIn: [Manel Hammouche](https://www.linkedin.com/in/manel-hammouche/)
 
+👤 **Lembani Sakala**
+
+- GitHub: [@lembani](https://github.com/lembani)
+- Twitter: [@lembani_](https://twitter.com/lembani_)
+- LinkedIn: [lembani-sakala](https://linkedin.com/in/lembani-sakala)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

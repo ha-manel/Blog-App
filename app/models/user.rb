@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
 
+  after_save :add_token
+
   ROLES = %i[admin default].freeze
 
   def is?(requested_role)
@@ -22,4 +24,11 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  private
+
+  def add_token
+    update_column(:authentication_token, ApiHelper::JsonWebToken.encode(email))
+  end
 end
+
